@@ -1,5 +1,5 @@
 from data.database import session_factory
-from data.models.report_model import Reports
+from data.model.report_model import Reports
 
 session = session_factory()
 

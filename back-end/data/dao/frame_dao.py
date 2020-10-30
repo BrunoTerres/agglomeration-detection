@@ -1,16 +1,19 @@
-from 
+#from application.face_recognition.py import face_det
 from data.database import session_factory
-from data.models.frame_model import Frames
+from data.model.frame_model import Frames
+import urllib.request 
 import base64
 import sys
 
-path = '/home/bruno/Imagens/'
+path = '/home/bruno/cyberTech/grupo3-rep/back-end/'
+#url_path = 'https://image.freepik.com/fotos-gratis/pessoas-diversas-felizes-unidas_53876-38802.jpg'
 
+#img = urllib.request.urlretrieve(url_path, 'pessoas.jpg')
 
 session = session_factory()
 
 def get_image():
-    with open(path + 'gato.jpg', 'rb') as image_file:
+    with open(path + 'baby.jpeg', 'rb') as image_file:
         encoded_string = base64.b64encode(image_file.read())
         encoded_string.decode('utf-8')
         
@@ -22,7 +25,17 @@ image = get_image()
 class Frame_dao():
 
 
+
     def create_frame(name):
+
+#        def get_image(img):
+#            with open(img, 'rb') as image_file:
+#                encoded_string = base64.b64encode(image_file.read())
+#                encoded_string.decode('utf-8')
+#        
+#                return encoded_string
+#
+#        image = get_image()
     
         frame_create = Frames(name=name, frame=image)
 

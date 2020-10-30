@@ -1,5 +1,5 @@
 from data.database import session_factory
-from data.models.alert_model import Alerts
+from data.model.alert_model import Alerts
 
 session = session_factory()
 
